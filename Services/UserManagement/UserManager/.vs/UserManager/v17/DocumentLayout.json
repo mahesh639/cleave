@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Migrations\\20241002113537_BaseMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UserManager\\Migrations\\20241002113537_BaseMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\repository\\iaccountrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\repository\\iaccountrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\models\\response\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\models\\response\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|c:\\personal files\\cleeve\\cleave\\services\\usermanagement\\usermanager\\usermanager\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{052AF6D0-7135-46EB-BC8F-15CB0DF2D61A}|UserManager\\UserManager.csproj|solutionrelative:usermanager\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +26,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -43,66 +43,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20241002113537_BaseMigration.cs",
-              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Migrations\\20241002113537_BaseMigration.cs",
-              "RelativeDocumentMoniker": "UserManager\\Migrations\\20241002113537_BaseMigration.cs",
-              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Migrations\\20241002113537_BaseMigration.cs",
-              "RelativeToolTip": "UserManager\\Migrations\\20241002113537_BaseMigration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Repository\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "UserManager\\Repository\\AccountRepository.cs",
+              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Repository\\AccountRepository.cs",
+              "RelativeToolTip": "UserManager\\Repository\\AccountRepository.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAawD8AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:35:38.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\appsettings.json",
-              "RelativeDocumentMoniker": "UserManager\\appsettings.json",
-              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\appsettings.json",
-              "RelativeToolTip": "UserManager\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-02T11:14:37.149Z",
+              "WhenOpened": "2024-10-02T14:32:04.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Program.cs",
-              "RelativeDocumentMoniker": "UserManager\\Program.cs",
-              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Program.cs",
-              "RelativeToolTip": "UserManager\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAABfAAAA",
+              "Title": "IAccountRespository.cs",
+              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Repository\\IAccountRespository.cs",
+              "RelativeDocumentMoniker": "UserManager\\Repository\\IAccountRespository.cs",
+              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Repository\\IAccountRespository.cs",
+              "RelativeToolTip": "UserManager\\Repository\\IAccountRespository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T10:34:04.861Z",
+              "WhenOpened": "2024-10-02T14:29:26.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceResponse.cs",
+              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\Response\\ServiceResponse.cs",
+              "RelativeDocumentMoniker": "UserManager\\Models\\Response\\ServiceResponse.cs",
+              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\Response\\ServiceResponse.cs",
+              "RelativeToolTip": "UserManager\\Models\\Response\\ServiceResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T14:17:27.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserDbContext.cs",
-              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Data\\UserDbContext.cs",
-              "RelativeDocumentMoniker": "UserManager\\Data\\UserDbContext.cs",
-              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Data\\UserDbContext.cs",
-              "RelativeToolTip": "UserManager\\Data\\UserDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA/AAAA",
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\DTO\\LoginDto.cs",
+              "RelativeDocumentMoniker": "UserManager\\Models\\DTO\\LoginDto.cs",
+              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\DTO\\LoginDto.cs",
+              "RelativeToolTip": "UserManager\\Models\\DTO\\LoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T09:46:12.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserDetails.cs",
-              "DocumentMoniker": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\UserDetails.cs",
-              "RelativeDocumentMoniker": "UserManager\\Models\\UserDetails.cs",
-              "ToolTip": "C:\\Personal Files\\Cleeve\\cleave\\Services\\UserManagement\\UserManager\\UserManager\\Models\\UserDetails.cs",
-              "RelativeToolTip": "UserManager\\Models\\UserDetails.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T09:37:42.193Z",
+              "WhenOpened": "2024-10-02T13:47:53.639Z",
               "EditorCaption": ""
             }
           ]
