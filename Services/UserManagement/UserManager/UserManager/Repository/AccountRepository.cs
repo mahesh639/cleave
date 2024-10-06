@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using UserManager.Models;
 using UserManager.Models.DTO;
 using UserManager.Models.Response;
@@ -10,13 +14,13 @@ namespace UserManager.Repository
     {
         private readonly UserManager<UserDetails> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration _configuration;
 
         public AccountRepository(UserManager<UserDetails> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            this.configuration = configuration;
+            this._configuration = configuration;
         }
 
         public async Task<ServiceResponse.GeneralResponse> CreateAccount(UserDto userDto)
@@ -49,9 +53,14 @@ namespace UserManager.Repository
             IdentityRole checkUser = await _roleManager.FindByNameAsync("User");
             if(checkAdmin == null || checkUser == null)
             {
-                if(checkAdmin == null)
+                if(checkAdmin == null && checkUser == null)
                 {
                     await _roleManager.CreateAsync(new IdentityRole() {Name = "Admin" });
+                    await _roleManager.CreateAsync(new IdentityRole() { Name = "User" });
+                }
+                else if(checkUser==null)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole() { Name = "User" });
                 }
                 else
                 {
@@ -64,9 +73,54 @@ namespace UserManager.Repository
             return new GeneralResponse(true, "User Created");
         }
 
-        public Task<ServiceResponse.LoginResponse> LoginAccount(LoginDto loginDto)
+        public async Task<ServiceResponse.LoginResponse> LoginAccount(LoginDto loginDto)
         {
-            throw new NotImplementedException();
+            if(loginDto == null) { return new LoginResponse(false, string.Empty, "Please enter login details"); }
+
+            UserDetails? userDetails = await _userManager.FindByEmailAsync(loginDto.Email);
+
+            if(userDetails == null)
+            {
+                return new LoginResponse(false, string.Empty, "Email Or Password entered is incorrect");
+            }
+
+            bool passwordCheck = await _userManager.CheckPasswordAsync(userDetails, loginDto.Password);
+
+            if(passwordCheck)
+            {
+                var role = await _userManager.GetRolesAsync(userDetails);
+                string userRole = role.First();
+                string token = GenerateToken(userDetails, userRole);
+                return new LoginResponse(true, token, "Credential Authenticated, token generated");
+            }
+            else
+            {
+                return new LoginResponse(false, string.Empty, "Email Or Password is Incorrect");
+            }
+        }
+
+        private string GenerateToken(UserDetails userDetails, string userRole)
+        {
+            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            Claim[] claimArr =
+            {
+                new Claim(ClaimTypes.NameIdentifier, userDetails.Id),
+                new Claim("Email", userDetails.Email),
+                new Claim("Role", userRole),
+                new Claim("Name", userDetails.Name)
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claimArr,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: signingCredentials
+                );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
