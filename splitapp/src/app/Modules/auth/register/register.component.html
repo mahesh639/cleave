@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Responsive Login and Signup Form </title>
+
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Register</header>
+                    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+                        <!-- User Name -->
+                        <div class="form-group" style="margin-top:20px;">
+                            <input type="text" placeholder="Username" name="username" class="form-control forminputs" #userRef="ngModel" ngModel required />
+                        </div>
+                        <div *ngIf="(userRef.touched && userRef.invalid) && userRef.errors" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="!(emailRef.value==='')">
+                                <p>&nbsp;username is mandatory</p>
+                            </div>
+                        </div>
+
+                        <!-- Email Address-->
+                        <div class="form-group" style="margin-top:20px;">
+                            <input type="email" placeholder="Email" name="email" class="form-control forminputs" [(ngModel)]="email" #emailRef="ngModel" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ngModel required />
+                        </div>
+                        <div *ngIf="(emailRef.touched && emailRef.invalid) && emailRef.errors" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="!(emailRef.value==='')">
+                                <p>&nbsp;Email id is mandatory</p>
+                            </div>
+                            <div [hidden]="!emailRef.errors || emailRef.value===''">
+                                <p>&nbsp;Email id is not entered in proper format</p>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" name="password" [(ngModel)]="password" #passwordRef="ngModel" class="password" ngModel required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+                        <div *ngIf="(passwordRef.touched && passwordRef.invalid) && passwordRef.errors" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="!(passwordRef.value==='')" style="text-align:left; padding-top:5px; color:red;">
+                                <p>&nbsp;Enter Password</p>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="field input-field">
+                            <input type="password" placeholder="Confirm Password" name="confirmPassword" #confirmPasswordRef="ngModel" class="password" ngModel required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+                        <div *ngIf="(confirmPasswordRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="(confirmPasswordRef.value===passwordRef.value)" style="text-align:left; padding-top:5px; color:red;">
+                                <p>&nbsp;Confirm Password field doesnot match with password field</p>
+                            </div>
+                        </div>
+
+                        <div class="field button-field">
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+
+        </section>
+
+        <!-- JavaScript -->
+        
+    </body>
+</html>
