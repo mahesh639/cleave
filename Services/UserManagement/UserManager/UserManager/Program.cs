@@ -9,6 +9,14 @@ using UserManager.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Register Cors
+builder.Services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+{
+    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+}));
+
+builder.Services.AddMvc();
+
 //Add Db Context
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevIdentityConnectionString") ?? throw new InvalidOperationException())
@@ -48,6 +56,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//use cors
+app.UseCors(builder => builder
+     .AllowAnyOrigin()
+     .AllowAnyMethod()
+     .AllowAnyHeader());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
