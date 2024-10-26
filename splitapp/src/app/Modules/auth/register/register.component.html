@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com-->
     <html lang="en">
@@ -18,8 +19,19 @@
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
-                    <header>Login</header>
-                    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" >
+                    <header>Register</header>
+                    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+                        <!-- User Name -->
+                        <div class="form-group" style="margin-top:20px;">
+                            <input type="text" placeholder="Username" name="username" class="form-control forminputs" #userRef="ngModel" ngModel required />
+                        </div>
+                        <div *ngIf="(userRef.touched && userRef.invalid) && userRef.errors" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="!(emailRef.value==='')">
+                                <p>&nbsp;username is mandatory</p>
+                            </div>
+                        </div>
+
+                        <!-- Email Address-->
                         <div class="form-group" style="margin-top:20px;">
                             <input type="email" placeholder="Email" name="email" class="form-control forminputs" [(ngModel)]="email" #emailRef="ngModel" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ngModel required />
                         </div>
@@ -32,46 +44,33 @@
                             </div>
                         </div>
 
+                        <!-- Password -->
                         <div class="field input-field">
                             <input type="password" placeholder="Password" name="password" [(ngModel)]="password" #passwordRef="ngModel" class="password" ngModel required>
                             <i class='bx bx-hide eye-icon'></i>
-                            <div *ngIf="(passwordRef.touched && passwordRef.invalid) && passwordRef.errors" style="text-align:left; padding-top:5px; color:red;">
-                                <div [hidden]="!(passwordRef.value==='')" style="text-align:left; padding-top:5px; color:red;">
-                                    <p>&nbsp;Enter Password</p>
-                                </div>
+                        </div>
+                        <div *ngIf="(passwordRef.touched && passwordRef.invalid) && passwordRef.errors" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="!(passwordRef.value==='')" style="text-align:left; padding-top:5px; color:red;">
+                                <p>&nbsp;Enter Password</p>
                             </div>
                         </div>
 
-                        <div class="form-link">
-                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        <!-- Confirm Password -->
+                        <div class="field input-field">
+                            <input type="password" placeholder="Confirm Password" name="confirmPassword" #confirmPasswordRef="ngModel" class="password" ngModel required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+                        <div *ngIf="(confirmPasswordRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+                            <div [hidden]="(confirmPasswordRef.value===passwordRef.value)" style="text-align:left; padding-top:5px; color:red;">
+                                <p>&nbsp;Confirm Password field doesnot match with password field</p>
+                            </div>
                         </div>
 
                         <div class="field button-field">
-                            <button type="submit">Login</button>
+                            <button type="submit">Register</button>
                         </div>
                     </form>
-
-                    <div class="form-link">
-                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
-                    </div>
                 </div>
-
-                <div class="line"></div>
-
-                <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span style="color: aliceblue;">Login with Facebook</span>
-                    </a>
-                </div>
-
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <img src="assets\images\google.png"  alt="" class="google-img">
-                        <span style="color: rgb(47, 48, 48);">Login with Google</span>
-                    </a>
-                </div>
-
             </div>
 
             <!-- Signup Form -->
