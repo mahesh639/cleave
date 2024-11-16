@@ -13,16 +13,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4070f4;
+    background-color: #1c1d1e;
     column-gap: 30px;
 }
 .form{
-    position: absolute;
+    position: relative;
     max-width: 430px;
     width: 100%;
     padding: 30px;
     border-radius: 6px;
     background: #FFF;
+    margin-left: auto;
+    margin-right: 10%;
 }
 .form.signup{
     opacity: 0;

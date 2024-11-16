@@ -12,7 +12,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private identityServiceBaseUrl = 'https://localhost:7215';
+  private identityServiceBaseUrl = 'https://localhost:7215/User';
   private registerApi = this.identityServiceBaseUrl+'/register';
   private loginApi = this.identityServiceBaseUrl+'/login';
 

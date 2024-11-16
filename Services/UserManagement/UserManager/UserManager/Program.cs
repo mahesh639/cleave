@@ -48,6 +48,9 @@ builder.Services.AddAuthentication(options => {
 
 builder.Services.AddScoped<IAccountRespository, AccountRepository>();
 
+//This dependency is added for Development purpose only.
+builder.Services.AddScoped<IPasswordHasher<UserDetails>, CustomPasswordHasher>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -77,3 +80,17 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//This is for Development use only
+public class CustomPasswordHasher : IPasswordHasher<UserDetails>
+{
+    public string HashPassword(UserDetails user, string password)
+    {
+        return password;
+    }
+
+    public PasswordVerificationResult VerifyHashedPassword(UserDetails user, string hashedPassword, string providedPassword)
+    {
+        return hashedPassword.Equals(providedPassword) ? PasswordVerificationResult.Success : PasswordVerificationResult.Failed;
+    }
+}

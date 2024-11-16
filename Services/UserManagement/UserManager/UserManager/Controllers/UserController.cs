@@ -7,7 +7,7 @@ using static UserManager.Models.Response.ServiceResponse;
 namespace UserManager.Controllers
 {
     [ApiController]
-    [Route("/[controller]")]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private readonly IAccountRespository _accountRepository;
@@ -16,7 +16,7 @@ namespace UserManager.Controllers
             _accountRepository = accountRespository;
         }
 
-        [HttpPost("/register")]
+        [HttpPost("register")]
         public IActionResult Register([FromBody] UserDto user)
         {
             GeneralResponse response = _accountRepository.CreateAccount(user).ConfigureAwait(false).GetAwaiter().GetResult();
@@ -29,7 +29,7 @@ namespace UserManager.Controllers
         }
 
         [HttpPost]
-        [Route("/login")]
+        [Route("login")]
         public IActionResult UserLogin([FromBody] LoginDto loginDto)
         {
             LoginResponse response = _accountRepository.LoginAccount(loginDto).ConfigureAwait(false).GetAwaiter().GetResult();
