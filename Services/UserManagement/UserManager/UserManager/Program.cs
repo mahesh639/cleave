@@ -6,6 +6,7 @@ using System.Text;
 using UserManager.Data;
 using UserManager.Models;
 using UserManager.Repository;
+using Cleave.Middleware.ExceptionHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,7 @@ builder.Services.AddAuthentication(options => {
 });
 
 builder.Services.AddScoped<IAccountRespository, AccountRepository>();
+builder.Services.AddTransient<Cleave.Middleware.ExceptionHandler.GlobalExceptionHandler>();
 
 //This dependency is added for Development purpose only.
 builder.Services.AddScoped<IPasswordHasher<UserDetails>, CustomPasswordHasher>();
@@ -72,6 +74,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<Cleave.Middleware.ExceptionHandler.GlobalExceptionHandler>();
 
 app.UseHttpsRedirection();
 
