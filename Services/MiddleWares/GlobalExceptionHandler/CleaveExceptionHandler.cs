@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Cleave.Middleware.ExceptionHandler
 {
-    public class GlobalExceptionHandler : IMiddleware
+    public class CleaveExceptionHandler : IMiddleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
@@ -42,6 +42,14 @@ namespace Cleave.Middleware.ExceptionHandler
                 Error = error
             };
             return executionDetails;
+        }
+    }
+
+    public static class CleaveExceptionHandlerMiddlewareExtension
+    {
+        public static IApplicationBuilder UseCleaveExceptionHandler(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<CleaveExceptionHandler>();
         }
     }
 }

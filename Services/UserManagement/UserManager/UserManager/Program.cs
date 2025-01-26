@@ -48,7 +48,7 @@ builder.Services.AddAuthentication(options => {
 });
 
 builder.Services.AddScoped<IAccountRespository, AccountRepository>();
-builder.Services.AddTransient<Cleave.Middleware.ExceptionHandler.GlobalExceptionHandler>();
+builder.Services.AddTransient<CleaveExceptionHandler>();
 
 //This dependency is added for Development purpose only.
 builder.Services.AddScoped<IPasswordHasher<UserDetails>, CustomPasswordHasher>();
@@ -75,7 +75,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<Cleave.Middleware.ExceptionHandler.GlobalExceptionHandler>();
+app.UseCleaveExceptionHandler();
 
 app.UseHttpsRedirection();
 

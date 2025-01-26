@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="GlobalExceptionHandler">
-      <HintPath>..\..\..\MiddleWares\GlobalExceptionHandler\bin\Debug\net8.0\GlobalExceptionHandler.dll</HintPath>
+    <Reference Include="Cleave.Middleware.ExceptionHandler">
+      <HintPath>..\..\..\..\Dlls\Cleave.Middleware.ExceptionHandler.dll</HintPath>
     </Reference>
   </ItemGroup>
 
