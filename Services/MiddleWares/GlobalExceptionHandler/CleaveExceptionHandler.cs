@@ -51,5 +51,10 @@ namespace Cleave.Middleware.ExceptionHandler
         {
             return app.UseMiddleware<CleaveExceptionHandler>();
         }
+
+        public static IServiceCollection AddCleaveExceptionHandler(this IServiceCollection services)
+        {
+            return services.AddSingleton<CleaveExceptionHandler>();
+        }
     }
 }

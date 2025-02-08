@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<CleaveAuthentication>();
-builder.Services.AddSingleton<CleaveExceptionHandler>();
+builder.Services.AddCleaveExceptionHandler();
+builder.Services.AddCleaveAuthentication();
 
 var app = builder.Build();
 

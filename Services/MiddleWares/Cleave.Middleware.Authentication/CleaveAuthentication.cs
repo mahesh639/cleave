@@ -10,6 +10,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Principal;
 using Cleave.Middleware.Authentication.Models;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Cleave.Middleware.Authentication
 {
@@ -82,6 +84,11 @@ namespace Cleave.Middleware.Authentication
         public static IApplicationBuilder UseCleaveAuthentication(this IApplicationBuilder app)
         {
             return app.UseMiddleware<CleaveAuthentication>();
+        }
+
+        public static IServiceCollection AddCleaveAuthentication(this IServiceCollection services)
+        {
+            return services.AddSingleton<CleaveAuthentication>();
         }
     }
 }
