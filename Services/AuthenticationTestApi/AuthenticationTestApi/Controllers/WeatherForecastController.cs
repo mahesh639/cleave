@@ -1,3 +1,4 @@
+using Cleave.ActionFilter.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticationTestApi.Controllers
@@ -19,6 +20,7 @@ namespace AuthenticationTestApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        [CleaveAuthorize("User")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

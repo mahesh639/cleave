@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cleave.Filter.Authorization" Version="1.0.0" />
     <PackageReference Include="Cleave.Middleware.Authentication" Version="1.0.0" />
     <PackageReference Include="Cleave.Middleware.ExceptionHandler" Version="1.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />

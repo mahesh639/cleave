@@ -1,5 +1,6 @@
 ﻿#File Paths
 $MiddlewareSolution = ".\..\Services\MiddleWares\MiddleWares.sln";
+$ActionFilterSolution = ".\..\Services\Filters\Filters.sln";
 $AuthenticationTestApiSolution = ".\..\Services\AuthenticationTestApi\AuthenticationTestApi.sln";
 $UserManagerSolution = ".\..\Services\UserManagement\UserManager\UserManager.sln";
 $NugetPackageDestination = "..\Cleave Packages";
@@ -10,11 +11,14 @@ $Solutions = @(
       ".\..\Services\MiddleWares\GlobalExceptionHandler\bin\Debug\Cleave.Middleware.ExceptionHandler.1.0.0.nupkg",
       ".\..\Services\MiddleWares\Cleave.Middleware.Authentication\bin\Debug\Cleave.Middleware.Authentication.1.0.0.nupkg"
    )),
+   [SolutionDetails]::new($ActionFilterSolution, @(
+      ".\..\Services\Filters\Cleave.ActionFilter.Authorization\bin\Debug\Cleave.Filter.Authorization.1.0.0.nupkg"
+   )),
    [SolutionDetails]::new($AuthenticationTestApiSolution, @()),
    [SolutionDetails]::new($UserManagerSolution, @())
 );
 
-#Create Dlls folder if it does not exist
+#Create Cleave Packages folder if it does not exist
 if(!(Test-Path $NugetPackageDestination)){
     Write-Host "Cleave Package folder Doesnot exist, creating DLLs folder";
     New-Item -ItemType Directory -Path $NugetPackageDestination;
@@ -30,6 +34,7 @@ foreach($solution in $Solutions){
          if(Test-Path $nugetPath){
             try{
                Copy-Item -Path $nugetPath -Destination $NugetPackageDestination;
+               Write-Host "Successfully copied : "+ $nugetPath
             }
             catch{
                Write-Host "Copy Failed : "+$nugetPath;
